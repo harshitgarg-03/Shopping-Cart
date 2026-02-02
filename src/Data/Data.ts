@@ -3,7 +3,7 @@ interface dataprops  {
     id: number,
     itemName: string,
     itemPrice: number
-    qty : number
+    qty: number
 }
 
 export const data : dataprops[] = [
