@@ -5,6 +5,7 @@ interface dataprops  {
     itemPrice: number
 }
 
+
 export const data : dataprops[] = [
   { id: 1, itemName: "EarBuds", itemPrice: 399 },
   { id: 2, itemName: "Watch", itemPrice: 799 },
