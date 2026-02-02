@@ -6,9 +6,10 @@ interface ShowCardProps {
   price: number;
   onAdd: (item: QueueItem) => void;
   id: number
+  qty: number
 }
 
-function ShowCard({id, name, price, onAdd}: ShowCardProps) {
+function ShowCard({id, name, price, qty, onAdd}: ShowCardProps) {
   return (
     <div className="py-4 rounded-xl text-center px-6 bg-gray-700">
       <div className="text-white font-semibold text-xl mb-2">{name}</div>
@@ -22,6 +23,7 @@ function ShowCard({id, name, price, onAdd}: ShowCardProps) {
             id: id,
             name,
             price,
+            qty
           });
         }}
       >
@@ -46,6 +48,7 @@ function ProductCart({ onAdd }: ProductCartProps) {
           name={item.itemName}
           price={item.itemPrice}
           onAdd={onAdd}
+          qty={item.qty}
         />
       ))}
     </div>
