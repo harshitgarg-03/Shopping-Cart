@@ -2,6 +2,9 @@ import type { QueueItem } from "../App";
 import "../index.css";
 interface CartProps {
   Queue: QueueItem[];
+  AddUpdate?: (id : {id : QueueItem}) => void;
+  SubUpdate?: (id : {id : QueueItem}) => void;
+  Quantity?: number;
 }
 
 function Cart({ Queue }: CartProps) {
@@ -26,7 +29,9 @@ function Cart({ Queue }: CartProps) {
           {/* Product */}
 
           {Queue.map((item) => (
+            
             <>
+            {/* console.log(item.qty, item.id, item.name, item.price); */}
               <div className="flex justify-between items-start  mb-4">
                 <div>
                   <h3 className="text-sm font-medium">{item.name}</h3>
@@ -37,7 +42,7 @@ function Cart({ Queue }: CartProps) {
                   {/* Quantity */}
                   <div className="flex items-center gap-2 mt-2">
                     <button className="w-6 h-6 rounded bg-zinc-700">-</button>
-                    <span>1</span>
+                    <span>{item.qty}</span>
                     <button className="w-6 h-6 rounded bg-zinc-700">+</button>
                   </div>
                 </div>
