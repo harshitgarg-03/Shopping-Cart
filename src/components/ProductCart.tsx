@@ -5,11 +5,11 @@ interface ShowCardProps {
   name: string;
   price: number;
   onAdd: (item: QueueItem) => void;
-  id: number
-  qty: number
+  id: number;
+  qty: number;
 }
 
-function ShowCard({id, name, price, qty, onAdd}: ShowCardProps) {
+function ShowCard({ id, name, price, qty, onAdd }: ShowCardProps) {
   return (
     <div className="py-4 rounded-xl text-center px-6 bg-gray-700">
       <div className="text-white font-semibold text-xl mb-2">{name}</div>
@@ -23,7 +23,7 @@ function ShowCard({id, name, price, qty, onAdd}: ShowCardProps) {
             id: id,
             name,
             price,
-            qty
+            qty,
           });
         }}
       >
@@ -44,7 +44,7 @@ function ProductCart({ onAdd }: ProductCartProps) {
       {data.map((item, idx) => (
         <ShowCard
           key={idx}
-          id={idx+1}
+          id={idx + 1}
           name={item.itemName}
           price={item.itemPrice}
           onAdd={onAdd}
