@@ -1,9 +1,10 @@
 import type { QueueItem } from "../App";
 
-
 interface CartProps {
   Queue : QueueItem[]
 }
+
+
 function Cart({Queue}: CartProps) {
   if (Queue.length == 0) {
     return (
